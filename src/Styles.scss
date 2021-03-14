@@ -49,7 +49,7 @@ $MessagesborderRadius: 5%;
 }
 .chatListContainer {
   border-bottom: $borderSize $borderType $borderColor;
-  height: 78vh;
+  height: 77vh;
   overflow-y: scroll;
   // overflow-x: hidden;
 }
@@ -95,8 +95,8 @@ $MessagesborderRadius: 5%;
 }
 .chatContentContainer {
   overflow-y: scroll;
-  // width: $chatPageWidth;
-  height: 76.5vh;
+  max-width: 64vw;
+  height: 77vh;
 }
 .receivedMessageStyle {
   border: $borderSize $borderType $borderColor;
@@ -121,10 +121,10 @@ $MessagesborderRadius: 5%;
 .chatRowContainer {
   height: fit-content;
   border-bottom: $borderSize $borderType $borderColor;
+  background-color: hsl(142, 52%, 96%);
+  &:hover{
+    background-color:rgb(118, 221, 190);
+  }
 }
-// .dateContainer{
-//   position: flex;
-//   justify-content: flex-end;
-//   align-items: flex-end;
-// }
+
 
