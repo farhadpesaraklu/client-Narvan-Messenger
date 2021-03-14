@@ -1,0 +1,130 @@
+$basicWidth: 100%;
+$basicheight: 100%;
+
+$chatPageWidth: 65vw;
+
+$headerWidth: 100%;
+$headerHeight: 6vh;
+
+$borderColor: #ccc;
+$borderSize: 1px;
+$borderType: solid;
+
+$sideBarHeight: 94vh;
+$sideBarWidth: 35vw;
+
+$titleBarHeight: 10vh;
+$titleBarColor: #ededed;
+$titleBarPading: 25px;
+
+$imageWidth: 60px;
+$imageHeight: 60px;
+$imageBorderRadius: 50%;
+$imageMargin: 10px;
+
+$MessagesborderRadius: 5%;
+
+.basicContainer {
+  width: $basicWidth;
+  height: $basicheight;
+}
+
+.header {
+  height: $headerHeight;
+  width: $headerWidth;
+  border: $borderSize $borderType $borderColor;
+}
+
+.sideBarContainer {
+  border: $borderSize $borderType $borderColor;
+  width: $sideBarWidth;
+  // height: 87vh;
+}
+.titleBarContainer {
+  width: 35vw;
+  height: $titleBarHeight;
+  border-bottom: $borderSize $borderType $borderColor;
+  padding-right: $titleBarPading;
+  padding-left: $titleBarPading;
+}
+.chatListContainer {
+  border-bottom: $borderSize $borderType $borderColor;
+  height: 78vh;
+  overflow-y: scroll;
+  // overflow-x: hidden;
+}
+.chatListBottomContainer {
+  width: 100%;
+  height: 7vh;
+  position: fixed;
+  bottom: 0;
+  border-top: $borderSize $borderType $borderColor;
+}
+.chatPageContainer {
+  width: $chatPageWidth;
+  height: 94vh;
+  // overflow-y: scroll;
+
+}
+.chatPageHeaderContainer {
+  width: $chatPageWidth;
+  height: $titleBarHeight;
+  border: $borderSize $borderType $borderColor;
+  padding-right: $titleBarPading;
+  padding-left: $titleBarPading;
+}
+
+.chatPageHeaderImage {
+  width: $imageWidth;
+  height: $imageHeight;
+  border-radius: $imageBorderRadius;
+  border: $borderSize $borderType $borderColor;
+  margin-right: $imageMargin;
+  background-image: url(./images/man-profile-svgrepo-com.svg);
+  background-repeat: no-repeat;
+  background-size: $imageWidth $imageHeight;
+}
+.chatInputContainer {
+  width:$chatPageWidth;
+  height: 7vh;
+  position: fixed;
+  bottom: 0;
+  border-left: $borderSize $borderType $borderColor;
+  border-right: $borderSize $borderType $borderColor;
+  border-bottom: $borderSize $borderType $borderColor;
+}
+.chatContentContainer {
+  overflow-y: scroll;
+  // width: $chatPageWidth;
+  height: 76.5vh;
+}
+.receivedMessageStyle {
+  border: $borderSize $borderType $borderColor;
+  border-radius: $MessagesborderRadius;
+  max-width: fit-content;
+  background-color: #e9e6ff;
+}
+.sentMessageStyle {
+  border: $borderSize $borderType $borderColor;
+  border-radius: $MessagesborderRadius;
+  max-width: fit-content;
+  background-color: #ccffb3;
+}
+.backgroundImage {
+  background-image: url(./images/wallpapertip_chat-background-wallpaper_517054.jpg);
+  background-repeat: no-repeat;
+  background-size: $chatPageWidth 94vh;
+  width: $chatPageWidth;
+  height: 94vh;
+  position: fixed;
+}
+.chatRowContainer {
+  height: fit-content;
+  border-bottom: $borderSize $borderType $borderColor;
+}
+// .dateContainer{
+//   position: flex;
+//   justify-content: flex-end;
+//   align-items: flex-end;
+// }
+
