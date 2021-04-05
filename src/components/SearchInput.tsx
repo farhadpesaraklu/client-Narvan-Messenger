@@ -1,22 +1,21 @@
-import { useState,useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Props {
-    onBackClick?: () => void;
-  }
-  const SearchInput: React.FC<Props> = ({ onBackClick}) => {
+  onBackClick?: () => void;
+}
+const SearchInput: React.FC<Props> = ({ onBackClick }) => {
+  const [searchKeyword, setSearchKeyword] = useState<string>("");
 
-  const [searchKeyword,setSearchKeyword ] = useState<string>("")
-
-  const handleSearchInputChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
-    setSearchKeyword(e.target.value)
-  }
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchKeyword(e.target.value);
+  };
 
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if(searchInputRef && searchInputRef.current) {
+    if (searchInputRef && searchInputRef.current) {
       searchInputRef.current.focus();
-    } 
+    }
   }, []);
   return (
     <div className="titleBarContainer has-background-info-light is-justify-content-space-between is-align-items-center is-flex ">
@@ -33,5 +32,5 @@ interface Props {
       ></input>
     </div>
   );
-}
+};
 export default SearchInput;

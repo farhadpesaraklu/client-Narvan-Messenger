@@ -11,9 +11,9 @@ const TitleBar: React.FC<Props> = ({ onSearchClick, onSideBarClick }) => {
       <span className="has-background-info-light" onClick={onSideBarClick}>
         <i className="fas fa-bars has-text-primary-dark  is-clickable is-size-4"></i>
       </span>
-      <p className="is-size-4 has-text-primary-dark "> Narvan Messenger</p>
+      <p className="is-size-4 has-text-primary-dark has-text-weight-bold "> Narvan Messenger</p>
       <span className="has-background-info-light" onClick={onSearchClick}>
-        <i className="fas fa-search has-text-primary-dark is-clickable is-size-4 is-clickable is-size-4"></i>
+        <i className="fas fa-search has-text-primary-dark is-clickable is-size-4"></i>
       </span>
     </div>
   );
