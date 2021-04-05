@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option go_package = "chatgrpc/";
+
+message healthCheckMessage{
+    string message = 1;
+}
+
+message Message{
+    string content = 1;
+    string sender_id = 2;
+    double creation_time = 3;
+    string channel = 4;
+}
+
+message IsTypingRequest{
+    string channel = 1;
+}
+
+message IsTypingResponse{
+    repeated string user_id = 1;
+}
+
+message ChangeTypingStatus{
+    string id = 1;
+    string channel = 2;
+}
+
+message Response {
+    Status status = 1;
+}
+
+enum Status {
+    SUCCESS = 0;
+    ERROR = 1;
+}
+
+service ChatService {
+    rpc transferMessage(Message) returns (stream Message);
+    rpc healthCheck(healthCheckMessage) returns (stream healthCheckMessage);
+    rpc getIsTyping(IsTypingRequest) returns (stream IsTypingResponse);
+    rpc startTyping(ChangeTypingStatus) returns (Response);
+    rpc finishTyping(ChangeTypingStatus) returns (Response);
+}

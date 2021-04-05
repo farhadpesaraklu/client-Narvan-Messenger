@@ -1,4 +1,6 @@
 import { useState, FC, useRef, useEffect } from "react";
+import { clientService } from "../GRPC";
+import { Message } from "../protos/chat_pb";
 
 const AttachIcon: FC = () => {
   return (
@@ -37,10 +39,31 @@ const VoiceIcon: FC = () => {
     </div>
   );
 };
+// interface Props {
+//   onInputChange?: () => void;
+//   chatKeyword: string;
+// }
 
 const ChatInput: FC = () => {
   const [chatKeyword, setChatKeyword] = useState<string>("");
 
+  useEffect(() => {
+    const client = clientService;
+    const messageTransfer = new Message();
+    messageTransfer.setContent(chatKeyword);
+    messageTransfer.setChannel("chatroom"); 
+    messageTransfer.setSenderId(Math.random().toString());
+    let time = new Date();
+    messageTransfer.setCreationTime(+time);
+    const stream = client.transferMessage(messageTransfer);
+    stream.on("data", (response: Message) => {
+      const data = response;
+      
+      console.log("response data", data);
+      console.log(time);
+    });
+  });
+  
   function handleInputeChange(e: React.ChangeEvent<HTMLInputElement>) {
     setChatKeyword(e.target.value);
   }
