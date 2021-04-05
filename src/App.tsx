@@ -13,16 +13,11 @@ import DefaultChatPageMode from "./components/DefaultChatPageMode";
 
 function App() {
   const [showSearchBox, setShowSearchBox] = useState<boolean>(false);
-  // const [showSideBar, setShowSideBar] = useState<boolean>(false);
-  const [showChatPage, setShowChatPage] = useState<boolean>(true);
+  const [showChatPage, setShowChatPage] = useState<boolean>(false);
 
   function handleSearchClick() {
     setShowSearchBox(true);
   }
-
-  // function handleSideBarClick(){
-  //   setShowSideBar(true)
-  // }
 
   function handleBackClick() {
     setShowSearchBox(false);
@@ -30,6 +25,9 @@ function App() {
 
   function handleCloseButton() {
     setShowChatPage(false);
+  }
+  function handleShowChatPage() {
+    setShowChatPage(true);
   }
   return (
     <div className="basicContainer">
@@ -44,12 +42,12 @@ function App() {
             <TitleBar onSearchClick={handleSearchClick} />
           )}
           <div>
-            <ChatList />
+            <ChatList onRowClick={handleShowChatPage} />
           </div>
         </div>
         <div>
           {showChatPage ? (
-            <ChatPage onClick={handleCloseButton} />
+            <ChatPage onClick={handleCloseButton}  />
           ) : (
             <DefaultChatPageMode />
           )}
