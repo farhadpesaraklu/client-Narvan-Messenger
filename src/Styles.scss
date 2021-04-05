@@ -61,6 +61,7 @@ $MessagesborderRadius: 5%;
   border-top: $borderSize $borderType $borderColor;
 }
 .chatPageContainer {
+  background-color: rgb(237, 250, 237);
   width: $chatPageWidth;
   height: 94vh;
   // overflow-y: scroll;
@@ -103,6 +104,7 @@ $MessagesborderRadius: 5%;
   border-radius: $MessagesborderRadius;
   max-width: fit-content;
   background-color: #e9e6ff;
+  word-wrap: break-word;
 }
 .sentMessageStyle {
   border: $borderSize $borderType $borderColor;
@@ -125,6 +127,12 @@ $MessagesborderRadius: 5%;
   &:hover{
     background-color:rgb(118, 221, 190);
   }
+}
+.chatRowParagraph{
+  white-space: nowrap; 
+  width: 25vw ;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
